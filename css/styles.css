@@ -472,3 +472,117 @@ footer {
     animation: none;
   }
 }
+
+/* ===== SECCIONES: fondo a todo el ancho, contenido centrado ===== */
+:root {
+  --dorado-oscuro: #8a6a2f;   /* dorado más oscuro: se lee bien sobre fondo crema */
+}
+
+.seccion {
+  max-width: none;            /* anula el límite anterior: el fondo ocupa todo el ancho */
+  margin: 0;
+  /* El contenido se mantiene en ~1000px centrado:
+     el padding lateral crece cuando la pantalla es más ancha */
+  padding: 6rem max(2rem, calc((100vw - 1000px) / 2));
+}
+
+/* Variante clara: fondo crema y texto oscuro */
+.seccion.claro {
+  background: var(--crema);
+  color: var(--negro);
+}
+
+.claro p {
+  color: #4a4740;
+}
+
+.claro .etiqueta {
+  color: var(--dorado-oscuro);
+}
+
+.claro .etiqueta::before {
+  background: var(--dorado-oscuro);
+}
+
+/* ===== TÍTULOS DE SECCIÓN ===== */
+h2 {
+  font-family: var(--fuente-titulo);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.05;
+  text-transform: uppercase;
+  margin: 1rem 0 2rem;
+}
+
+h2::after {
+  display: none;              /* quita la rayita anterior: ahora usamos la etiqueta */
+}
+
+/* Parte destacada del título: serif y dorada, en su propia línea */
+h2 em {
+  display: block;
+  font-family: var(--fuente-serif);
+  font-weight: 500;
+  text-transform: none;
+  color: var(--dorado);
+}
+
+.claro h2 em {
+  color: var(--dorado-oscuro);
+}
+
+/* Cita del propósito en la sección clara */
+.claro p.proposito {
+  color: var(--negro);
+  border-left-color: var(--dorado-oscuro);
+}
+
+/* ===== TARJETAS DE HABILIDADES (sobre fondo oscuro) ===== */
+.tarjeta {
+  background: var(--negro-suave);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0;           /* esquinas rectas, como los botones */
+}
+
+.tarjeta h3 {
+  font-family: var(--fuente-titulo);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--dorado);
+}
+
+/* ===== TARJETAS DE PROYECTOS (sobre fondo claro) ===== */
+.proyecto {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+}
+
+.proyecto-info h3 {
+  font-family: var(--fuente-titulo);
+  text-transform: uppercase;
+  color: var(--negro);
+}
+
+.claro .proyecto-info p {
+  color: #4a4740;
+}
+
+/* Etiquetas de tecnologías sobre fondo claro */
+.claro .etiquetas span {
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  color: #2b2a27;
+  border-radius: 0;
+}
+
+/* Insignia "Prototipo" sobre fondo claro */
+.claro .insignia {
+  color: var(--dorado-oscuro);
+  border-color: var(--dorado-oscuro);
+  border-radius: 0;
+}
+
+/* Etiquetas de tecnologías sobre fondo oscuro: también rectas */
+.etiquetas span {
+  border-radius: 0;
+}
