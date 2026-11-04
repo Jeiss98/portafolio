@@ -1,11 +1,114 @@
 /* ===== VARIABLES: los colores se definen una sola vez aquí ===== */
+/* ===== VARIABLES: todos los colores en un solo lugar ===== */
 :root {
-  --fondo: #0b0f1f;          /* azul muy oscuro, casi negro */
-  --fondo-claro: #141a33;    /* para tarjetas y menú */
-  --texto: #e8eaf6;          /* blanco suave, cansa menos la vista */
-  --texto-suave: #a5abc9;    /* para párrafos secundarios */
-  --violeta: #8b5cf6;        /* color de acento principal */
-  --azul: #3b82f6;           /* color de acento secundario */
+  --negro: #0c0c0c;          /* fondo oscuro principal */
+  --negro-suave: #161616;    /* tarjetas y bloques sobre fondo oscuro */
+  --crema: #f4f2ee;          /* fondo de secciones claras */
+  --dorado: #c9a566;         /* color de acento (cámbialo aquí para cambiar toda la web) */
+  --texto: #f1efe9;          /* texto sobre fondo oscuro */
+  --texto-suave: #a8a49a;    /* texto secundario */
+
+  /* Alias para que el CSS anterior siga funcionando */
+  --fondo: var(--negro);
+  --fondo-claro: var(--negro-suave);
+  --violeta: var(--dorado);
+  --azul: var(--dorado);
+
+  /* Familias tipográficas */
+  --fuente-titulo: "Oswald", sans-serif;
+  --fuente-serif: "Playfair Display", serif;
+  --fuente-texto: "DM Sans", system-ui, sans-serif;
+}
+
+/* ===== ESTILO BASE ===== */
+body {
+  background: var(--negro);
+  color: var(--texto);
+  font-family: var(--fuente-texto);
+  line-height: 1.6;
+}
+
+/* ===== BARRA SUPERIOR ===== */
+.barra {
+  position: sticky;          /* se queda fija arriba al hacer scroll */
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0.9rem 2rem;
+  background: rgba(12, 12, 12, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  color: var(--texto);
+}
+
+.logo-marca {
+  background: var(--dorado);
+  color: var(--negro);
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+  padding: 0.5rem 0.6rem;
+  line-height: 1;
+}
+
+.logo-texto {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logo-texto strong {
+  font-family: var(--fuente-titulo);
+  font-size: 1.1rem;
+}
+
+.logo-texto small {
+  color: var(--dorado);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* Menú */
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: var(--texto);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--dorado);
+}
+
+/* Botón de la derecha */
+.btn-nav {
+  background: var(--dorado);
+  color: var(--negro);
+  padding: 0.7rem 1.4rem;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: opacity 0.2s;
+}
+
+.btn-nav:hover {
+  opacity: 0.85;
 }
 
 /* ===== REINICIO: quita márgenes por defecto del navegador ===== */

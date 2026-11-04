@@ -13,23 +13,39 @@
 
   <!-- Descripción que muestran buscadores como Google -->
   <meta name="description" content="Portafolio de Jeisson Palma.">
-
+<!-- Fuentes de Google: Oswald (titulares), Playfair Display (palabra destacada), DM Sans (texto) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Oswald:wght@600;700&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
   <!-- Conectar el archivo de estilos -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
   <!-- Cabecera con el menú de navegación -->
-  <header>
-    <nav>
-      <!-- Los href con # llevan a la sección que tenga ese mismo id -->
-      <a href="#inicio">Inicio</a>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#habilidades">Habilidades</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
+ <!-- Barra superior: logo, menú y botón de contacto -->
+<header class="barra">
+
+  <!-- Logo: cuadro dorado con tus iniciales + nombre y especialidad -->
+  <a href="#inicio" class="logo">
+    <span class="logo-marca">JP</span>
+    <span class="logo-texto">
+      <strong>Jeisson Palma</strong>
+      <small>Desarrollo web · Datos · Diseño</small>
+    </span>
+  </a>
+
+  <!-- Menú de navegación -->
+  <nav>
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#habilidades">Habilidades</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <!-- Botón de acción a la derecha -->
+  <a href="#contacto" class="btn-nav">Contáctame</a>
+</header>
 
   <!-- Contenido principal de la página -->
   <main>
