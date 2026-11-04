@@ -423,3 +423,52 @@ footer {
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
+
+/* ===== FRANJA DORADA DE SERVICIOS ===== */
+.franja {
+  background: var(--dorado);
+  color: var(--negro);
+  overflow: hidden;            /* oculta lo que sale de los bordes */
+  white-space: nowrap;         /* evita que el texto baje de línea */
+  padding: 0.9rem 0;
+}
+
+/* La pista es más ancha que la pantalla y se mueve de derecha a izquierda */
+.franja-pista {
+  display: flex;
+  width: max-content;          /* ancho = el de sus dos grupos juntos */
+  animation: desplazar 35s linear infinite;
+}
+
+/* Pausa la animación al pasar el mouse */
+.franja:hover .franja-pista {
+  animation-play-state: paused;
+}
+
+.franja-grupo {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-right: 2rem;         /* el mismo espacio que el gap, para que el empalme sea exacto */
+}
+
+.franja-grupo span {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* Mueve la pista justo la mitad de su ancho (= un grupo) y vuelve a empezar */
+@keyframes desplazar {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Respeto por quien tiene desactivadas las animaciones en su sistema */
+@media (prefers-reduced-motion: reduce) {
+  .franja-pista {
+    animation: none;
+  }
+}
