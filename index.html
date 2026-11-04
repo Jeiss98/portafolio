@@ -28,7 +28,7 @@
 
   <!-- Logo: cuadro dorado con tus iniciales + nombre y especialidad -->
   <a href="#inicio" class="logo">
-    <span class="logo-marca">JP</span>
+  <img class="logo-img" src="img/Logo.png" alt="Logo de Jeisson Palma">
     <span class="logo-texto">
       <strong>Jeisson Palma</strong>
       <small>Desarrollo web · Datos · Diseño</small>
@@ -80,6 +80,10 @@
     </div>
 
   </div>
+
+<!-- Contenedor del objeto 3D: Three.js dibujará aquí.
+     aria-hidden porque es decorativo -->
+<div class="hero-3d" id="hero-3d" aria-hidden="true"></div>
 
   <!-- Nota pequeña abajo a la derecha, como en tu captura -->
   <p class="hero-nota">Disponible para proyectos freelance</p>
@@ -352,6 +356,9 @@
 </footer>
 
   <!-- Conectar el JavaScript al final para que cargue después del HTML -->
-  <script src="js/main.js"></script>
+ <!-- Librería Three.js (versión fija, desde cdnjs) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<!-- Tu código -->
+<script src="js/main.js"></script>
 </body>
 </html>
