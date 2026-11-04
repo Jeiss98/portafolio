@@ -661,3 +661,86 @@ h2 em {
   height: 42px;
   width: auto;   /* mantiene la proporción */
 }
+
+/* ===== VERSIÓN PARA CELULAR ===== */
+
+/* En computador el botón hamburguesa no se ve */
+.menu-boton {
+  display: none;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--texto);
+  font-size: 1.3rem;
+  line-height: 1;
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
+}
+
+/* Corrección: en pantallas muy angostas las tarjetas de proyectos
+   no deben ser más anchas que la pantalla */
+.proyectos {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+}
+
+@media (max-width: 800px) {
+
+  /* Barra más compacta */
+  .barra {
+    padding: 0.8rem 1.2rem;
+  }
+
+  /* Ocultamos el subtítulo del logo y el botón de contacto (cabe en el menú) */
+  .logo-texto small,
+  .btn-nav {
+    display: none;
+  }
+
+  /* Mostramos el botón hamburguesa */
+  .menu-boton {
+    display: block;
+  }
+
+  /* El menú pasa a ser una lista desplegable debajo de la barra */
+  
+  /* Permite que el menú pase a una segunda fila dentro de la barra */
+  .barra {
+    flex-wrap: wrap;
+  }
+
+  /* Menú: cerrado por defecto, ocupa todo el ancho cuando se abre */
+  nav {
+    display: none;
+    order: 3;                      /* queda después del logo y del botón ☰ */
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* JavaScript agrega la clase "abierto" al tocar ☰ */
+  nav.abierto {
+    display: flex;
+  }
+
+  nav a {
+    display: block;
+    padding: 1rem 0.2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--texto);
+  }
+
+
+
+  /* Portada y secciones con menos margen lateral */
+  #inicio {
+    padding: 3rem 1.5rem;
+    min-height: 80vh;
+  }
+
+  .hero-nota {
+    display: none;                 /* estorba en pantallas pequeñas */
+  }
+
+  .seccion {
+    padding: 4rem 1.5rem;
+  }
+}

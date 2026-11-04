@@ -24,27 +24,32 @@
 
   <!-- Cabecera con el menú de navegación -->
  <!-- Barra superior: logo, menú y botón de contacto -->
+<!-- Barra superior: logo, menú y botón de contacto -->
 <header class="barra">
 
   <!-- Logo: cuadro dorado con tus iniciales + nombre y especialidad -->
   <a href="#inicio" class="logo">
-  <img class="logo-img" src="img/Logo.png" alt="Logo de Jeisson Palma">
+    <span class="logo-marca">JP</span>
     <span class="logo-texto">
       <strong>Jeisson Palma</strong>
       <small>Desarrollo web · Datos · Diseño</small>
     </span>
   </a>
 
-  <!-- Menú de navegación -->
-  <nav>
+  <!-- Menú de navegación: el id="menu" lo usa el JavaScript.
+       Los cuatro enlaces DEBEN ir dentro de esta etiqueta -->
+  <nav id="menu">
     <a href="#sobre-mi">Sobre mí</a>
     <a href="#habilidades">Habilidades</a>
     <a href="#proyectos">Proyectos</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
-  <!-- Botón de acción a la derecha -->
+  <!-- Botón de acción a la derecha (en celular se oculta) -->
   <a href="#contacto" class="btn-nav">Contáctame</a>
+
+  <!-- Botón hamburguesa (solo se ve en celular) -->
+  <button class="menu-boton" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">☰</button>
 </header>
 
   <!-- Contenido principal de la página -->

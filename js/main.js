@@ -286,3 +286,27 @@ if (!reducirMovimiento) {
   }
   animar();
 })();
+
+/* =========================================================
+   3. MENÚ PARA CELULAR (botón hamburguesa)
+   ========================================================= */
+const botonMenu = document.querySelector(".menu-boton");
+const menu = document.getElementById("menu");
+
+if (botonMenu && menu) {
+  // Al tocar el botón: abre o cierra el menú
+  botonMenu.addEventListener("click", () => {
+    const abierto = menu.classList.toggle("abierto"); // agrega o quita la clase
+    botonMenu.setAttribute("aria-expanded", abierto); // avisa el estado a lectores de pantalla
+    botonMenu.textContent = abierto ? "✕" : "☰";      // cambia el ícono
+  });
+
+  // Al tocar un enlace del menú: lo cerramos para que no tape la página
+  menu.querySelectorAll("a").forEach((enlace) => {
+    enlace.addEventListener("click", () => {
+      menu.classList.remove("abierto");
+      botonMenu.setAttribute("aria-expanded", "false");
+      botonMenu.textContent = "☰";
+    });
+  });
+}
