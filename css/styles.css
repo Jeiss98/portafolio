@@ -588,12 +588,18 @@ h2 em {
 }
 
 /* ===== OBJETO 3D EN LA PORTADA ===== */
+:root {
+  /* TAMAÑO DEL OBJETO 3D: cambia estos valores para agrandarlo o achicarlo.
+     40vw = 40% del ancho de pantalla; 560px = tope máximo */
+  --tamano-3d: min(40vw, 560px);
+}
+
 .hero-3d {
   position: absolute;
-  right: 6vw;
+  right: 4vw;
   top: 50%;
   translate: 0 -50%;            /* centra verticalmente */
-  width: min(32vw, 440px);
+  width: var(--tamano-3d);
   aspect-ratio: 1;              /* siempre cuadrado */
 }
 
@@ -601,14 +607,36 @@ h2 em {
   width: 100%;
   height: 100%;
   display: block;
+  cursor: grab;                 /* manito abierta: se puede agarrar */
+  touch-action: pan-y;          /* en pantallas táctiles no bloquea el scroll vertical */
 }
 
-/* El texto no debe invadir el espacio del objeto */
+/* Mientras se arrastra: manito cerrada */
+.hero-3d.agarrando canvas {
+  cursor: grabbing;
+}
+
+/* Pista pequeña debajo del objeto */
+.hero-3d::after {
+  content: "Arrastra para girar";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1.2rem;
+  text-align: center;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+  pointer-events: none;         /* no estorba al mouse */
+}
+
+/* El texto de la portada no debe invadir el espacio del objeto */
 .hero-contenido {
-  max-width: min(820px, 56vw);
+  max-width: min(820px, 52vw);
 }
 
-/* En pantallas pequeñas ocultamos el objeto 3D (se ve mejor sin él) */
+/* En pantallas pequeñas ocultamos el objeto 3D */
 @media (max-width: 900px) {
   .hero-3d { display: none; }
   .hero-contenido { max-width: none; }
