@@ -109,3 +109,96 @@ h1 {
   background: transparent;
   border: 2px solid var(--violeta);
 }
+
+/* ===== SECCIONES GENERALES (Sobre mí, Habilidades, etc.) ===== */
+.seccion {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 2rem; /* espacio arriba/abajo y a los lados */
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Una pequeña línea de color debajo de cada título h2 */
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--violeta);
+  margin-top: 0.5rem;
+  border-radius: 2px;
+}
+
+.seccion p {
+  color: var(--texto-suave);
+  max-width: 650px;
+}
+
+/* ===== TARJETAS DE HABILIDADES ===== */
+.tarjetas {
+  display: grid;
+  /* columnas automáticas: mínimo 240px cada una, se acomodan solas */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.tarjeta {
+  background: var(--fondo-claro);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(139, 92, 246, 0.25); /* borde violeta tenue */
+  transition: transform 0.2s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+}
+
+.tarjeta h3 {
+  color: var(--violeta);
+  margin-bottom: 0.8rem;
+}
+
+.tarjeta ul {
+  list-style: none; /* quita los puntos de la lista */
+}
+
+.tarjeta li {
+  color: var(--texto-suave);
+  padding: 0.2rem 0;
+}
+
+/* Cita destacada del propósito: borde violeta a la izquierda */
+.seccion p.proposito {
+  margin-top: 1.5rem;
+  padding-left: 1rem;
+  border-left: 4px solid var(--violeta);
+  color: var(--texto);   /* un poco más claro que el resto */
+  font-style: italic;
+}
+
+/* Subtítulo de la sección de tecnologías */
+.subtitulo {
+  margin: 3rem 0 1rem;
+}
+
+/* Contenedor de etiquetas: se acomodan en filas y bajan de línea solas */
+.etiquetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+/* Cada etiqueta: forma de "pastilla" */
+.etiquetas span {
+  background: var(--fondo-claro);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  color: var(--texto);
+  padding: 0.4rem 1rem;
+  border-radius: 999px; /* bordes totalmente redondeados */
+  font-size: 0.9rem;
+}
