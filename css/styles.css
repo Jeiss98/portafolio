@@ -202,3 +202,68 @@ h2::after {
   border-radius: 999px; /* bordes totalmente redondeados */
   font-size: 0.9rem;
 }
+
+
+/* ===== TARJETAS DE PROYECTOS ===== */
+.proyectos {
+  display: grid;
+  /* mínimo 300px por tarjeta; se acomodan solas según el ancho */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.proyecto {
+  background: var(--fondo-claro);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  border-radius: 12px;
+  overflow: hidden;       /* recorta la imagen a las esquinas redondeadas */
+  transition: transform 0.2s;
+}
+
+.proyecto:hover {
+  transform: translateY(-4px);
+}
+
+.proyecto img {
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* todas las imágenes con la misma proporción */
+  object-fit: cover;      /* recorta sin deformar */
+  display: block;
+}
+
+.proyecto-info {
+  padding: 1.2rem 1.5rem 1.5rem;
+}
+
+.proyecto-info h3 {
+  margin-bottom: 0.5rem;
+}
+
+.proyecto-info p {
+  margin-bottom: 1rem;
+  max-width: none;        /* anula el límite de ancho de .seccion p */
+  font-size: 0.95rem;
+}
+
+/* ===== PIE DE PÁGINA ===== */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(139, 92, 246, 0.2); /* línea tenue arriba */
+}
+
+/* Insignia pequeña sobre el título de cada proyecto */
+.insignia {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  padding: 0.15rem 0.7rem;
+  font-size: 0.75rem;
+  color: var(--violeta);
+  border: 1px solid var(--violeta);
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

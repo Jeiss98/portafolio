@@ -165,12 +165,127 @@
     <span>Power BI</span>
   </div>
 </section>
-    <section id="proyectos"></section>
-    <section id="contacto"></section>
-  </main>
+   <!-- SECCIÓN PROYECTOS: una tarjeta por proyecto -->
+<section id="proyectos" class="seccion">
+  <p>
+  Una selección de proyectos para clientes y prototipos de alta fidelidad
+  que muestran cómo combino diseño y desarrollo.
+</p>
 
-  <!-- Pie de página -->
-  <footer></footer>
+  <!-- Contenedor: reutiliza la idea de columnas automáticas -->
+  <div class="proyectos">
+
+    <!-- PROYECTO 1: la barbería -->
+    <article class="proyecto">
+        <!-- Insignia que aclara que es una propuesta, no un sitio entregado -->
+<span class="insignia">Prototipo</span>
+      <!-- alt: describe la imagen (accesibilidad y SEO) -->
+      <img src="img/barberia.png" alt="Página principal del sitio web de ABS Barber Club">
+      <div class="proyecto-info">
+        <h3>ABS Barber Club</h3>
+        <p>
+          Sitio web de alta fidelidad para una barbería de autor en Bogotá,
+          con catálogo de servicios, reserva de citas y contacto directo
+          por WhatsApp.
+        </p>
+        <!-- TU TURNO: deja solo las tecnologías que de verdad usaste -->
+        <div class="etiquetas">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROYECTO 2: PsicoGestión -->
+    <article class="proyecto">
+        <!-- Insignia que aclara que es una propuesta, no un sitio entregado -->
+<span class="insignia">Prototipo</span>
+      <img src="img/psicogestion.png" alt="Pantalla principal de PsicoGestión">
+      <div class="proyecto-info">
+        <h3>PsicoGestión</h3>
+        <p>
+          Mockup de alta fidelidad de un sistema web para la gestión
+          de un consultorio psicológico, creado para presentarlo a un cliente.
+        </p>
+        <div class="etiquetas">
+          <!-- TU TURNO: tecnologías usadas -->
+          <span>Tecnología</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROYECTO 3: portafolio tipo Pisos Deck -->
+    <article class="proyecto">
+        <!-- Insignia que aclara que es una propuesta, no un sitio entregado -->
+<span class="insignia">Prototipo</span>
+      <img src="img/pisos-deck.png" alt="Portafolio de trabajo para una persona natural">
+      <div class="proyecto-info">
+    <h3>Pisos Deck | Instalación y Acabados</h3>
+    <p>
+      Sitio web profesional para presentar servicios de instalación
+      de pisos, deck y acabados, con galería de trabajos, formulario
+      de cotización y contacto directo por WhatsApp.
+    </p>
+    <!-- TU TURNO: pon las tecnologías que realmente usaste -->
+    <div class="etiquetas">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+    </div>
+  </div>
+</article>
+
+    <!-- PROYECTO 4: Gammar -->
+    <article class="proyecto">
+      <img src="img/gammar.png" alt="Captura del proyecto Gammar">
+     <div class="proyecto-info">
+    <h3>Gama Repuestos</h3>
+    <p>
+      Sitio web comercial para una tienda de repuestos de motocicleta,
+      con catálogo y rediseño visual basado en las necesidades
+      del cliente.
+    </p>
+    <!-- Tecnologías: confirma que sean las que quedaron en la versión final -->
+    <div class="etiquetas">
+      <span>Angular</span>
+      <span>Node.js</span>
+      <span>Express</span>
+      <span>SQLite</span>
+    </div>
+  </div>
+</article>
+
+  </div>
+</section>
+    <!-- SECCIÓN CONTACTO: cómo te encuentran los clientes -->
+<section id="contacto" class="seccion">
+  <h2>Contacto</h2>
+
+  <p>
+    ¿Tienes una idea o un negocio que quiere destacar en lo digital?
+    Escríbeme y conversemos.
+  </p>
+
+  <!-- Enlaces de contacto: target="_blank" abre en una pestaña nueva;
+       rel="noopener" es una medida de seguridad para esos enlaces -->
+  <div class="botones">
+    <!-- mailto: abre el programa de correo del visitante -->
+    <a href="mailto:jeissone.palmar@gmail.com" class="btn">Escríbeme</a>
+
+    <!-- wa.me abre WhatsApp: pon el número con código de país y sin espacios ni "+" -->
+    <a href="https://wa.me/573223055616" class="btn btn-secundario"
+       target="_blank" rel="noopener">WhatsApp</a>
+
+    <a href="https://github.com/Jeiss98" class="btn btn-secundario"
+       target="_blank" rel="noopener">GitHub</a>
+  </div>
+</section>
+
+<!-- Pie de página -->
+<footer>
+  <p>© 2026 Jeisson Palma · Bogotá, Colombia</p>
+</footer>
 
   <!-- Conectar el JavaScript al final para que cargue después del HTML -->
   <script src="js/main.js"></script>
