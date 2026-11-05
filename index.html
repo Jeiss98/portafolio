@@ -17,7 +17,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Oswald:wght@600;700&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
-  <!-- Conectar el archivo de estilos -->
+  
+<!-- Estilos del avatar (va después de styles.css) -->
+<link rel="stylesheet" href="css/avatar.css">
+<!-- Conectar el archivo de estilos -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -127,40 +130,307 @@
 
 
    <!-- SECCIÓN SOBRE MÍ: quién eres, en pocas líneas -->
+<!-- SECCIÓN SOBRE MÍ: texto a la izquierda y avatar interactivo a la derecha -->
 <section id="sobre-mi" class="seccion claro">
   <p class="etiqueta">Sobre mí</p>
   <h2>Quien está <em>detrás del código.</em></h2>
 
-  <!-- Párrafo 1: quién eres y qué combinas -->
-  <p>
-    Soy estudiante de Ingeniería de Sistemas y desarrollador freelance.
-    Combino la lógica de la ingeniería con la creatividad del diseño
-    para crear sitios web, herramientas digitales y materiales gráficos
-    que responden a necesidades reales.
-  </p>
+  <!-- Dos columnas: texto + avatar (los estilos están en css/avatar.css) -->
+  <div class="sobre-mi-grid">
 
-  <!-- Párrafo 2: tu forma de trabajar (lo que te diferencia) -->
-  <p>
-    Antes de escribir una línea de código, escucho. Cada negocio tiene
-    una historia y objetivos distintos, y mi meta no es solo entregar
-    un producto, sino construir algo que ayude a crecer, organizarse
-    y destacar en lo digital.
-  </p>
+    <!-- Columna del texto -->
+    <div class="sobre-mi-texto">
 
-  <!-- Párrafo 3: tus intereses -->
-  <p>
-    Me interesan el desarrollo de software, el análisis de datos,
-    la automatización y la inteligencia artificial, y sigo aprendiendo
-    con proyectos que llevan la teoría a la práctica.
-  </p>
+      <!-- Párrafo 1: quién eres y qué combinas -->
+      <p>
+        Soy estudiante de Ingeniería de Sistemas y desarrollador freelance.
+        Combino la lógica de la ingeniería con la creatividad del diseño
+        para crear sitios web, herramientas digitales y materiales gráficos
+        que responden a necesidades reales.
+      </p>
 
-  <!-- Tu propósito, como cierre destacado -->
-  <p class="proposito">
-    Mi propósito: crear soluciones digitales funcionales, atractivas
-    y accesibles para que negocios y emprendedores aprovechen todo
-    su potencial en el entorno digital.
-  </p>
+      <!-- Párrafo 2: tu forma de trabajar (lo que te diferencia) -->
+      <p>
+        Antes de escribir una línea de código, escucho. Cada negocio tiene
+        una historia y objetivos distintos, y mi meta no es solo entregar
+        un producto, sino construir algo que ayude a crecer, organizarse
+        y destacar en lo digital.
+      </p>
+
+      <!-- Párrafo 3: tus intereses -->
+      <p>
+        Me interesan el desarrollo de software, el análisis de datos,
+        la automatización y la inteligencia artificial, y sigo aprendiendo
+        con proyectos que llevan la teoría a la práctica.
+      </p>
+
+      <!-- Tu propósito, como cierre destacado -->
+      <p class="proposito">
+        Mi propósito: crear soluciones digitales funcionales, atractivas
+        y accesibles para que negocios y emprendedores aprovechen todo
+        su potencial en el entorno digital.
+      </p>
+    </div>
+
+    <!-- Columna del avatar interactivo -->
+    <svg id="avatar" class="avatar" viewBox="0 0 800 800" role="img" aria-labelledby="av-titulo av-desc">
+  <title id="av-titulo">Ilustración de Jeisson Palma</title>
+  <desc id="av-desc">Avatar con lentes y airpods, vestido con una camisilla con su logo, rodeado de tarjetas de código, datos, diseño y bases de datos.</desc>
+
+  <defs>
+    <!-- Resplandor dorado de fondo -->
+    <radialGradient id="brillo" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#c9a566" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#c9a566" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Degradado del cuello: sombra bajo la barbilla que se funde con el pecho -->
+    <linearGradient id="cuelloGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#58321f"/>
+      <stop offset="1" stop-color="#7b4a2f"/>
+    </linearGradient>
+
+    <!-- Recorte circular: el busto queda dentro del círculo -->
+    <clipPath id="recorte">
+      <circle cx="400" cy="400" r="300"/>
+    </clipPath>
+
+    <!-- Estrella de cuatro puntas (se reutiliza) -->
+    <path id="estrella" d="M0 -11 L3 -3 L11 0 L3 3 L0 11 L-3 3 L-11 0 L-3 -3 Z" fill="#c9a566"/>
+
+    <!-- Monograma "JP": marca provisional en la camisa (se reemplaza por tu logo real) -->
+    <g id="monograma" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-9 -12 V8 Q-9 16 -17 14"/>
+      <path d="M4 14 V-12 H11 Q20 -12 20 -3 Q20 6 11 6 H4"/>
+    </g>
+  </defs>
+
+  <!-- ===== FONDO ===== -->
+  <circle cx="400" cy="400" r="395" fill="url(#brillo)"/>
+  <circle cx="400" cy="400" r="300" fill="#161616"/>
+  <circle cx="400" cy="400" r="322" fill="none" stroke="#c9a566" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="4 10"/>
+  <circle cx="400" cy="400" r="300" fill="none" stroke="#c9a566" stroke-width="3"/>
+
+  <!-- ===== PERSONAJE ===== -->
+  <g id="personaje">
+   <g id="rebote">
+    <g clip-path="url(#recorte)">
+
+      <!-- Hombros y brazos (piel) -->
+      <path d="M130 720 C140 640 230 575 330 566 L470 566 C570 575 660 640 670 720 Z" fill="#7b4a2f"/>
+
+      <!-- Sombra suave bajo el hombro para dar volumen -->
+      <path d="M150 720 C158 660 215 610 280 590 C250 630 240 670 242 720 Z" fill="#5e3722" opacity="0.55"/>
+      <path d="M650 720 C642 660 585 610 520 590 C550 630 560 670 558 720 Z" fill="#5e3722" opacity="0.55"/>
+
+      <!-- Cuello -->
+      <path d="M370 515 L430 515 L438 572 Q400 590 362 572 Z" fill="url(#cuelloGrad)"/>
+
+      <!-- Clavículas (líneas suaves) -->
+      <path d="M352 580 Q376 588 396 584" fill="none" stroke="#5e3722" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+      <path d="M448 580 Q424 588 404 584" fill="none" stroke="#5e3722" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+
+      <!-- Camisilla (tirantes anchos y escote cuadrado) -->
+      <path d="M316 562 L350 562 L350 604 Q350 612 358 612 L442 612 Q450 612 450 604 L450 562 L484 562 Q520 588 530 640 L534 720 L266 720 L270 640 Q280 588 316 562 Z" fill="#241b1e"/>
+      <!-- Pliegue sutil de la tela -->
+      <path d="M300 640 Q296 680 300 720" fill="none" stroke="#150f11" stroke-width="3" opacity="0.6"/>
+      <path d="M500 640 Q504 680 500 720" fill="none" stroke="#150f11" stroke-width="3" opacity="0.6"/>
+
+      <!-- Cadena plateada -->
+      <path d="M352 560 Q400 640 448 560" fill="none" stroke="#d6d6de" stroke-width="4" stroke-linecap="round" stroke-dasharray="7 3"/>
+
+      <!-- LOGO EN LA CAMISA -->
+      <!-- Marca provisional (cuadro dorado con "JP"). Se oculta sola si existe img/Logo.png -->
+      <g id="logoCamisaMarca">
+        <rect x="370" y="632" width="60" height="60" rx="7" fill="#c9a566"/>
+        <use href="#monograma" transform="translate(398 662) scale(1.05)" stroke="#161616" stroke-width="3.6"/>
+      </g>
+      <!-- Tu logo real: JavaScript lo carga desde img/Logo.png si el archivo existe -->
+      <image id="logoCamisaImg" x="362" y="626" width="76" height="76"
+             preserveAspectRatio="xMidYMid meet" display="none"/>
+    </g>
+
+    <!-- ===== CABEZA (se inclina siguiendo el mouse) ===== -->
+    <g id="cabeza">
+
+      <!-- Orejas -->
+      <circle cx="316" cy="468" r="16" fill="#6a3f27"/>
+      <circle cx="484" cy="468" r="16" fill="#6a3f27"/>
+
+      <!-- Cabeza -->
+      <ellipse cx="400" cy="452" rx="84" ry="98" fill="#7b4a2f"/>
+
+      <!-- Pómulos con un poco de luz -->
+      <ellipse cx="352" cy="496" rx="20" ry="12" fill="#8d5a3a" opacity="0.55"/>
+      <ellipse cx="448" cy="496" rx="20" ry="12" fill="#8d5a3a" opacity="0.55"/>
+
+      
+      <!-- AirPods: cabeza redonda + tallo -->
+      <rect x="316.5" y="470" width="7" height="30" rx="3.5" fill="#f4f2ee"/>
+      <circle cx="320" cy="470" r="8" fill="#f4f2ee"/>
+      <rect x="476.5" y="470" width="7" height="30" rx="3.5" fill="#f4f2ee"/>
+      <circle cx="480" cy="470" r="8" fill="#f4f2ee"/>
+
+      <!-- Cejas -->
+      <path d="M344 440 Q364 430 388 438" fill="none" stroke="#1a0f0a" stroke-width="6" stroke-linecap="round"/>
+      <path d="M412 438 Q436 430 456 440" fill="none" stroke="#1a0f0a" stroke-width="6" stroke-linecap="round"/>
+
+      <!-- Ojos (blanco + pupila). La pupila se mueve con el mouse -->
+      <g class="ojo">
+        <ellipse cx="363" cy="468" rx="11" ry="8.5" fill="#f4f2ee"/>
+        <circle class="pupila" cx="363" cy="468" r="5.5" fill="#1a0f0a"/>
+      </g>
+      <g class="ojo">
+        <ellipse cx="437" cy="468" rx="11" ry="8.5" fill="#f4f2ee"/>
+        <circle class="pupila" cx="437" cy="468" r="5.5" fill="#1a0f0a"/>
+      </g>
+
+      <!-- Lentes transparentes con un toque lila -->
+      <rect x="336" y="446" width="54" height="46" rx="15" fill="#c9b8ff" fill-opacity="0.24" stroke="#ece8f7" stroke-width="3.5"/>
+      <rect x="410" y="446" width="54" height="46" rx="15" fill="#c9b8ff" fill-opacity="0.24" stroke="#ece8f7" stroke-width="3.5"/>
+      <path d="M390 464 Q400 457 410 464" fill="none" stroke="#ece8f7" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M336 462 L322 460" stroke="#ece8f7" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M464 462 L478 460" stroke="#ece8f7" stroke-width="3.5" stroke-linecap="round"/>
+      <!-- Reflejos en los lentes -->
+      <path d="M346 456 L356 452" stroke="#ffffff" stroke-opacity="0.7" stroke-width="3" stroke-linecap="round"/>
+      <path d="M420 456 L430 452" stroke="#ffffff" stroke-opacity="0.7" stroke-width="3" stroke-linecap="round"/>
+
+      <!-- Nariz -->
+      <path d="M400 474 Q391 502 405 504" fill="none" stroke="#5b341f" stroke-width="4" stroke-linecap="round"/>
+
+      <!-- Bigote y perilla -->
+      <path d="M372 516 Q386 507 400 513 Q414 507 428 516 Q414 522 400 519 Q386 522 372 516 Z" fill="#25150d" opacity="0.85"/>
+      <path d="M380 538 Q374 552 390 558 Q400 562 410 558 Q426 552 420 538 Q410 546 400 546 Q390 546 380 538 Z" fill="#1a0f0a" opacity="0.92"/>
+
+      <!-- Boca normal: sonrisa pequeña -->
+      <path class="boca-normal" d="M382 528 Q400 540 418 528" fill="none" stroke="#2a140c" stroke-width="4.5" stroke-linecap="round"/>
+
+      <!-- Boca feliz: sonrisa grande con dientes (oculta hasta hacer clic) -->
+      <g class="boca-feliz" display="none">
+        <path d="M374 524 Q400 560 426 524 Z" fill="#2a0f0a"/>
+        <path d="M380 526 Q400 536 420 526 Q400 540 380 526 Z" fill="#f4f2ee"/>
+      </g>
+
+      <!-- CABELLO: corto, rizado arriba y con degradado (fade) en los lados -->
+      <g fill="#0f0f0f">
+        <!-- Base del cabello: contorno exterior arriba y línea de la frente abajo -->
+        <path d="M316 436 C304 350 346 318 400 318 C456 318 496 350 484 436 C478 412 462 396 440 394 C420 392 410 398 400 398 C390 398 380 392 360 394 C338 396 322 412 316 436 Z"/>
+        <!-- Pequeños rizos en el borde superior (dan textura) -->
+        <circle cx="334" cy="352" r="15"/>
+        <circle cx="356" cy="334" r="16"/>
+        <circle cx="382" cy="324" r="16"/>
+        <circle cx="410" cy="322" r="16"/>
+        <circle cx="438" cy="328" r="16"/>
+        <circle cx="462" cy="342" r="15"/>
+        <circle cx="478" cy="368" r="13"/>
+      </g>
+      <!-- Degradado en las sienes: tono más claro, como cabello muy corto -->
+      <path d="M317 438 C314 414 320 402 332 400 L336 436 Z" fill="#3a2418" opacity="0.8"/>
+      <path d="M483 438 C486 414 480 402 468 400 L464 436 Z" fill="#3a2418" opacity="0.8"/>
+      <!-- Brillo suave en el cabello -->
+      <path d="M350 346 C362 332 380 326 398 324" fill="none" stroke="#ffffff" stroke-opacity="0.10" stroke-width="6" stroke-linecap="round"/>
+    </g>
+   </g>
+  </g>
+
+  <!-- ===== TARJETA DE CÓDIGO (arriba izquierda) ===== -->
+  <g class="av-tarjeta" data-area="codigo">
+    <g class="flota">
+      <rect class="marco" x="62" y="170" width="214" height="132" rx="14" fill="#1d1d1d" stroke="#c9a566" stroke-opacity="0.6" stroke-width="2"/>
+      <circle cx="86" cy="192" r="4.5" fill="#c9a566"/>
+      <circle cx="104" cy="192" r="4.5" fill="#6b6b6b"/>
+      <circle cx="122" cy="192" r="4.5" fill="#6b6b6b"/>
+      <rect x="86" y="214" width="92" height="8" rx="4" fill="#c9a566"/>
+      <rect x="104" y="234" width="124" height="8" rx="4" fill="#f4f2ee" fill-opacity="0.75"/>
+      <rect x="104" y="254" width="72" height="8" rx="4" fill="#c9a566" fill-opacity="0.7"/>
+      <rect x="86" y="274" width="104" height="8" rx="4" fill="#f4f2ee" fill-opacity="0.5"/>
+      <!-- Etiqueta -->
+      <g class="etq">
+        <rect x="76" y="312" width="186" height="30" rx="15" fill="#c9a566"/>
+        <text x="169" y="332" text-anchor="middle">Desarrollo web</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ===== INSIGNIA &lt;/&gt; (arriba centro) ===== -->
+  <g class="av-tarjeta" data-area="codigo">
+    <g class="flota" style="animation-delay:-1.5s">
+      <circle cx="486" cy="140" r="34" fill="#c9a566"/>
+      <path d="M474 128 L460 140 L474 152" fill="none" stroke="#161616" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M498 128 L512 140 L498 152" fill="none" stroke="#161616" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M491 124 L481 156" fill="none" stroke="#161616" stroke-width="5" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- ===== TARJETA DE DATOS (derecha) ===== -->
+  <g class="av-tarjeta" data-area="datos">
+    <g class="flota" style="animation-delay:-2.5s">
+      <rect class="marco" x="520" y="210" width="214" height="142" rx="14" fill="#1d1d1d" stroke="#c9a566" stroke-opacity="0.6" stroke-width="2"/>
+      <rect x="544" y="230" width="78" height="8" rx="4" fill="#f4f2ee" fill-opacity="0.6"/>
+      <rect x="546" y="300" width="24" height="30" rx="3" fill="#c9a566" fill-opacity="0.55"/>
+      <rect x="581" y="275" width="24" height="55" rx="3" fill="#f4f2ee" fill-opacity="0.7"/>
+      <rect x="616" y="290" width="24" height="40" rx="3" fill="#c9a566" fill-opacity="0.8"/>
+      <rect x="651" y="250" width="24" height="80" rx="3" fill="#c9a566"/>
+      <rect x="686" y="265" width="24" height="65" rx="3" fill="#f4f2ee" fill-opacity="0.7"/>
+      <path d="M540 331 H718" stroke="#f4f2ee" stroke-opacity="0.3" stroke-width="2"/>
+      <g class="etq">
+        <rect x="532" y="362" width="190" height="30" rx="15" fill="#c9a566"/>
+        <text x="627" y="382" text-anchor="middle">Análisis de datos</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ===== TARJETA DE DISEÑO (abajo izquierda) ===== -->
+  <g class="av-tarjeta" data-area="diseno">
+    <g class="flota" style="animation-delay:-3.5s">
+      <rect class="marco" x="56" y="452" width="176" height="170" rx="14" fill="#1d1d1d" stroke="#c9a566" stroke-opacity="0.6" stroke-width="2"/>
+      <rect x="78" y="470" width="64" height="7" rx="3.5" fill="#f4f2ee" fill-opacity="0.5"/>
+      <path d="M82 580 C108 500 170 500 206 572" fill="none" stroke="#c9a566" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M82 580 L104 520" stroke="#f4f2ee" stroke-opacity="0.5" stroke-width="1.5"/>
+      <path d="M206 572 L184 520" stroke="#f4f2ee" stroke-opacity="0.5" stroke-width="1.5"/>
+      <circle cx="104" cy="520" r="4" fill="#f4f2ee"/>
+      <circle cx="184" cy="520" r="4" fill="#f4f2ee"/>
+      <rect x="76" y="574" width="12" height="12" fill="#161616" stroke="#c9a566" stroke-width="2.5"/>
+      <rect x="200" y="566" width="12" height="12" fill="#161616" stroke="#c9a566" stroke-width="2.5"/>
+      <circle cx="86" cy="604" r="9" fill="#c9a566"/>
+      <circle cx="112" cy="604" r="9" fill="#f4f2ee"/>
+      <circle cx="138" cy="604" r="9" fill="#8a6a2f"/>
+      <circle cx="164" cy="604" r="9" fill="#3b3b3b" stroke="#c9a566" stroke-opacity="0.5" stroke-width="1.5"/>
+      <g class="etq">
+        <rect x="46" y="632" width="196" height="30" rx="15" fill="#c9a566"/>
+        <text x="144" y="652" text-anchor="middle">Diseño gráfico y web</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ===== BASE DE DATOS (abajo derecha) ===== -->
+  <g class="av-tarjeta" data-area="bd">
+    <g class="flota" style="animation-delay:-0.8s">
+      <g transform="translate(618 488)">
+        <path class="marco" d="M0 14 V74 A44 12 0 0 0 88 74 V14" fill="#1d1d1d" stroke="#c9a566" stroke-width="3"/>
+        <path d="M0 34 A44 12 0 0 0 88 34" fill="none" stroke="#c9a566" stroke-opacity="0.7" stroke-width="2.5"/>
+        <path d="M0 54 A44 12 0 0 0 88 54" fill="none" stroke="#c9a566" stroke-opacity="0.7" stroke-width="2.5"/>
+        <ellipse class="marco" cx="44" cy="14" rx="44" ry="12" fill="#262626" stroke="#c9a566" stroke-width="3"/>
+      </g>
+      <g class="etq">
+        <rect x="598" y="590" width="128" height="30" rx="15" fill="#c9a566"/>
+        <text x="662" y="610" text-anchor="middle">Bases de datos</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ===== ESTRELLAS (destellan al hacer clic) ===== -->
+  <g transform="translate(318 112) scale(1.1)"><use class="chispa" href="#estrella"/></g>
+  <g transform="translate(716 150) scale(0.8)"><use class="chispa" href="#estrella"/></g>
+  <g transform="translate(48 380) scale(0.9)"><use class="chispa" href="#estrella"/></g>
+  <g transform="translate(752 430) scale(1)"><use class="chispa" href="#estrella"/></g>
+  <g transform="translate(262 690) scale(0.8)"><use class="chispa" href="#estrella"/></g>
+  <g transform="translate(560 700) scale(1.1)"><use class="chispa" href="#estrella"/></g>
+</svg>
+
+  </div>
 </section>
+
 
 
 <!-- SECCIÓN HABILIDADES: agrupadas por área para que se lean rápido -->
@@ -365,5 +635,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <!-- Tu código -->
 <script src="js/main.js"></script>
+<!-- Avatar interactivo (va después de main.js) -->
+<script src="js/avatar.js"></script>
 </body>
 </html>

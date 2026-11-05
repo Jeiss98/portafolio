@@ -1,0 +1,144 @@
+/* =========================================================
+   AVATAR INTERACTIVO (css/avatar.css)
+   Estilos del avatar de la sección "Sobre mí".
+   Se carga DESPUÉS de styles.css para no pelear con él.
+   ========================================================= */
+
+/* ===== SOBRE MÍ: texto a la izquierda, avatar a la derecha ===== */
+.sobre-mi-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;  /* el texto un poco más ancho */
+  gap: 3rem;
+  align-items: center;               /* centra verticalmente */
+}
+
+/* Tamaño del avatar dentro de Sobre mí */
+.sobre-mi-grid .avatar {
+  width: 100%;
+  max-width: 460px;
+  justify-self: center;
+}
+
+/* En celular: una sola columna, con el avatar arriba del texto */
+@media (max-width: 800px) {
+  .sobre-mi-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .sobre-mi-grid .avatar {
+    order: -1;
+    max-width: 320px;
+  }
+}
+
+/* ================= AVATAR ================= */
+
+/* Tamaño del avatar: cámbialo aquí */
+.avatar {
+  width: min(92vw, 720px);
+  height: auto;
+  display: block;
+  overflow: visible;           /* las tarjetas pueden sobresalir al flotar */
+  user-select: none;
+}
+
+/* ---- Respiración suave de todo el personaje ---- */
+#personaje {
+  cursor: pointer;
+  animation: respirar 4.5s ease-in-out infinite;
+}
+@keyframes respirar {
+  50% { transform: translateY(3px); }
+}
+
+/* ---- Ojos: para poder parpadear escalan en vertical ---- */
+.ojo {
+  transform-box: fill-box;     /* el origen de la transformación es el propio ojo */
+  transform-origin: center;
+  transition: transform 0.08s ease;
+}
+.ojo.cerrado {
+  transform: scaleY(0.1);
+}
+
+/* ---- Cabeza: JavaScript la inclina siguiendo el mouse ---- */
+#cabeza {
+  transform-origin: 400px 560px;   /* gira desde la base del cuello */
+}
+
+/* ---- Rebote de felicidad al hacer clic ---- */
+.avatar.feliz #rebote {
+  animation: rebote 0.5s ease-in-out 2;
+}
+@keyframes rebote {
+  50% { transform: translateY(-14px); }
+}
+
+/* Sonrisa grande solo cuando está feliz */
+.avatar.feliz .boca-normal { display: none; }
+.avatar.feliz .boca-feliz  { display: inline; }
+
+/* Las estrellas destellan al hacer clic */
+.chispa {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.avatar.feliz .chispa {
+  animation: destello 0.7s ease-out;
+}
+@keyframes destello {
+  40% { transform: scale(2.2) rotate(45deg); }
+}
+
+/* ---- Tarjetas: flotan solas y reaccionan al pasar el mouse ---- */
+.av-tarjeta {
+  cursor: pointer;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+.av-tarjeta:hover {
+  transform: translateY(-10px) scale(1.05);
+  filter: drop-shadow(0 0 14px rgba(201, 165, 102, 0.55));  /* brillo dorado */
+}
+
+/* Flotación suave (en un grupo interno para no pelear con el hover) */
+.flota {
+  animation: flotar 5s ease-in-out infinite;
+}
+@keyframes flotar {
+  50% { transform: translateY(-6px); }
+}
+
+/* El marco se ilumina al pasar el mouse */
+.marco {
+  transition: stroke 0.3s ease, stroke-opacity 0.3s ease;
+}
+.av-tarjeta:hover .marco {
+  stroke: #e6c98f;
+  stroke-opacity: 1;
+}
+
+/* Etiqueta con el nombre del área: aparece al pasar el mouse */
+.etq {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;        /* no estorba al mouse */
+}
+.etq text {
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  fill: #0c0c0c;
+}
+.av-tarjeta:hover .etq {
+  opacity: 1;
+}
+
+/* ---- Respeto por quien desactiva las animaciones en su sistema ---- */
+@media (prefers-reduced-motion: reduce) {
+  #personaje, .flota, .avatar.feliz #rebote, .avatar.feliz .chispa {
+    animation: none;
+  }
+  .av-tarjeta, .ojo { transition: none; }
+}
